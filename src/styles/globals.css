@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.light {
+  @apply bg-white text-[#111];
+}
+.theme {
+  @apply transition-all ease-in duration-500;
+}
+.dark {
+  @apply bg-[#111] text-[#bbb];
+}
+
+.app {
+  @apply max-w-7xl z-10 min-h-screen mx-auto px-[60px] flex flex-col justify-between;
+}
+
+.desc {
+  @apply my-2 text-lg text-gray-600 sm:text-xl max-w-2xl;
+}
+
+.green_btn {
+  @apply rounded-xl border border-green-500 bg-green-500 py-1.5 px-5 text-white transition-all hover:bg-white hover:text-green-600 text-center text-[15px] font-inter flex items-center justify-center;
+}
+.red_btn {
+  @apply rounded-xl border border-red-500 bg-red-600 py-1.5 px-5 text-white transition-all hover:bg-white hover:text-red-600 text-center text-[15px] font-inter flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-xl border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-[15px] font-inter flex items-center justify-center;
+}
+
+.outline_btn_darkmode {
+  @apply rounded-xl border border-black bg-[#eee] py-1.5 px-5 text-[#111] transition-all hover:bg-black hover:text-white text-center text-[15px] font-inter flex items-center justify-center;
+}
+
+.link_btn {
+  @apply border-none outline-none text-green-700 hover:text-green-800 px-3 text-[15px] text-center font-inter flex items-center justify-center;
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.green_gradient {
+  @apply bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent;
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.head_text {
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] sm:text-6xl;
+}
+
+.form_textarea {
+  @apply border rounded-lg h-[200px] mt-2 p-3 text-lg outline-0  text-[#aaa] border-[#bbb];
+}
+
+.form_input {
+  @apply px-4 py-2 outline-none text-[#aaa] border border-[#bbb] text-lg rounded-lg;
+}
+
+.create_post_form_input {
+  @apply px-4 py-2 outline-none text-[#aaa] border border-[#bbb] text-lg rounded-lg bg-transparent;
+}
+
+.dropdown {
+  @apply z-50 absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-[#eee] min-w-[210px] flex flex-col gap-2 items-start shadow-2xl;
+}
+
+.dropdown_link {
+  @apply text-sm font-inter text-gray-800 hover:text-green-600 font-medium py-2 border-b w-full;
+}
+
+.contact_form_card {
+  @apply rounded-xl shadow-md p-10 border;
+}
+@keyframes move {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0px) scale(1.03);
+  }
+}
+
+@keyframes upAndDown {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* navbar */
+.logo_text {
+  @apply font-satoshi font-semibold text-lg tracking-wide;
+}
+
+/*  Portfolio */
+.link_item:hover .link_item_title {
+  @apply text-[#53c28b];
+}
+.link_item:nth-child(1) {
+  @apply bg-[url('/illustration.png')];
+}
+.link_item:nth-child(2) {
+  @apply bg-[url('/websites.jpg')];
+}
+.link_item:nth-child(3) {
+  @apply bg-[url('/apps.jpg')];
+}
+
+.category_item:nth-child(2n + 1) {
+  @apply flex-row-reverse;
+}
+
+.toggle_darkmode {
+  @apply w-[42px] h-[24px] border-[1.5px] border-[#53c28b70] rounded-[30px] cursor-pointer flex justify-between items-center p-1 relative;
+}
+
+/* Resgister page */
+.register_input {
+  @apply p-4 bg-transparent border-[2px] border-[#bbb] rounded-md text-lg font-bold;
+}
