@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import React, { useContext } from "react";
-import { ThemeContext } from "@/context/ThemeContext";
+import React from "react";
 
 export const metadata = {
   title: "Raz Dev Contact Information",
@@ -10,7 +7,6 @@ export const metadata = {
 };
 
 const Contact = () => {
-  const { mode } = useContext(ThemeContext);
   return (
     <div className="flex flex-col gap-10 items-center justify-center my-14">
       <h1 className="head_text">Let's Leep in Touch</h1>
@@ -44,13 +40,7 @@ const Contact = () => {
             cols="30"
             rows="10"
           ></textarea>
-          <button
-            className={
-              mode === "light" ? "outline_btn" : "outline_btn_darkmode"
-            }
-          >
-            Send
-          </button>
+          <button className={"green_btn"}>Send</button>
         </form>
       </div>
     </div>
