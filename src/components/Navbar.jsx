@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <nav className="justify-between flex w-full pt-3 h-[100px] items-center">
       <Link href="/" className="logo_text">
-        A-Blog
+        Next Blog
       </Link>
       {/* Desktop Navigation */}
       <div className="sm:flex hidden items-center gap-4">
@@ -57,10 +57,26 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <div className="sm:flex hidden items-center gap-4">
+        <div className="sm:flex hidden items-center gap-4 relative">
           {session?.user && (
-            <div className="flex items-center gap-3">
-              <button className="link_btn" onClick={signOut}>
+            <Image
+              src={session?.user.image}
+              width={37}
+              height={37}
+              className="rounded-full cursor-pointer"
+              alt="profile"
+              onClick={() => setToggleDropdown(!toggleDropdown)}
+            />
+          )}
+          {toggleDropdown && (
+            <div className="z-50 absolute right-0 top-full mt-3 w-20 p-5 rounded-lg bg-[#eee] min-w-[350px] flex flex-col gap-6 items-start shadow-2xl">
+              <div className="flex items-center gap-1">
+                <span>{session?.user.email}</span>
+                <span className="text-gray-500 text-sm lowercase">
+                  ({session?.user.name})
+                </span>
+              </div>
+              <button className="red_btn w-full" onClick={signOut}>
                 Sign Out
               </button>
             </div>

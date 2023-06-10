@@ -3,6 +3,8 @@
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
   const session = useSession();
@@ -32,7 +34,7 @@ const Login = () => {
   return (
     <div className="items-center flex justify-center gap-5 flex-col">
       <form
-        className="flex flex-col justify-between gap-5 w-[300px]"
+        className="flex flex-col justify-between gap-5 w-[400px]"
         onSubmit={handleSubmit}
       >
         <input
@@ -57,22 +59,30 @@ const Login = () => {
         )}
       </form>
       <span className="">- OR -</span>
-      <button
-        className="green_btn"
-        onClick={() => {
-          signIn("google");
-        }}
-      >
-        Login with Google
-      </button>
-      <button
-        className="outline_btn_darkmode"
-        onClick={() => {
-          signIn("github");
-        }}
-      >
-        Login with Github
-      </button>
+      <div className="items-center flex flex-col gap-4 w-[400px]">
+        <button
+          className="google_btn"
+          onClick={() => {
+            signIn("google");
+          }}
+        >
+          <span className="mr-1.5">
+            <FcGoogle />
+          </span>{" "}
+          Sign in with Google
+        </button>
+        <button
+          className="github_btn"
+          onClick={() => {
+            signIn("github");
+          }}
+        >
+          <span className="mr-1.5">
+            <FaGithub />
+          </span>{" "}
+          Continue with Github
+        </button>
+      </div>
     </div>
   );
 };

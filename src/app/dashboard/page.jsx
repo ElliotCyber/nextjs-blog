@@ -39,7 +39,7 @@ const Dashboard = () => {
   }
 
   if (session.status === "unauthenticated") {
-    router.push("/dashboard/login");
+    router.push("/dashboard/register");
   }
 
   const handleSubmit = async (e) => {
