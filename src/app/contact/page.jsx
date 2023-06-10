@@ -9,7 +9,7 @@ export const metadata = {
 const Contact = () => {
   return (
     <div className="flex flex-col gap-10 items-center justify-center my-14">
-      <h1 className="head_text">Let's Leep in Touch</h1>
+      <h1 className="head_text">{`Let's Leep in Touch`}</h1>
       <div className="flex gap-[100px] items-center">
         <div className="flex-1 object-contain sm:flex hidden">
           <Image
